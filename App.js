@@ -3,9 +3,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Platform } from "react-native";
 import { registerRootComponent } from "expo";
-import Planets from "./Planets";
-import Films from "./Films";
-import Spaceships from "./Spaceships";
+import Planets from "./Components/Pages/Planets";
+import Films from "./Components/Pages/Films";
+import Spaceships from "./Components/Pages/Spaceships";
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
