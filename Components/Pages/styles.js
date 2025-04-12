@@ -16,7 +16,6 @@ export default StyleSheet.create({
   },
 
   textInputContainer: {
-    alignSelf: "stretch",
     marginBottom: 10,
     marginTop: 10,
     width: "90%",
