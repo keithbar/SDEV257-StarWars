@@ -7,12 +7,33 @@ export default StyleSheet.create({
     paddingTop: 10,
   },
 
+  itemList: {
+    flex: 1,
+    alignSelf: "center",
+  },
+
+  itemContainer: {
+    flex: 1,
+    flexDirection: "row",
+    width: 200
+  },
+
   item: {
     margin: 5,
-    padding: 5,
-    color: "slategrey",
+    padding: 25,
+    width: 200,
     backgroundColor: "ghostwhite",
-    textAlign: "center"
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  itemText: {
+    textAlign: "center",
+    color: "slategrey"
+  },
+
+  swipeBlank: {
+    width: 200,
   },
 
   textInputContainer: {

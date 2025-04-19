@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Text, TextInput, Alert, View, TouchableOpacity, Keyboard } from "react-native";
+import { TextInput, Alert, View, 
+    TouchableOpacity, Keyboard } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import styles from "./Pages/styles";
 

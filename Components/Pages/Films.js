@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import styles from "./styles";
 import ListContainer from "../Lists/ListContainer";
 import SearchBar from "../SearchBar";
