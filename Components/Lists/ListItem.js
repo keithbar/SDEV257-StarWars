@@ -1,11 +1,38 @@
-import React, { useRef } from "react";
-import { 
-    View, ScrollView, Text, TouchableOpacity 
-} from "react-native";
+import React, { useRef, useCallback } from "react";
+import { View, ScrollView, 
+    Text, TouchableOpacity } from "react-native";
+import { useFocusEffect } from "@react-navigation/native"
+import Animated, { useSharedValue, useAnimatedStyle, 
+    withTiming, withDelay, Easing } from "react-native-reanimated";
 import styles from "../Pages/styles";
 
-export default function ListItem({ onSwipe, name }){
+export default function ListItem({ onSwipe, name, id }){
     const scrollViewRef = useRef();
+    const translateX = useSharedValue(-300);
+
+    // Animation logic
+    // useFocusEffect() is similar to useEffect() but is called
+    // every time a screen is navigated to, rather than when it
+    // is first rendered.
+    useFocusEffect(
+        useCallback(() => {
+            // Start with the item off screen to the left
+            translateX.value = -300;
+            // Give each item a delay to stagger the animation
+            translateX.value = withDelay(
+                id * 100, withTiming(0, {
+                    duration: 600,
+                    easing: Easing.out(Easing.exp)
+                })
+            );
+        }, [])
+    );
+
+    const animatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [{ translateX: translateX.value }]
+        };
+    });
 
     function onScroll(e){
         if (e.nativeEvent.contentOffset.x == 0 ||
@@ -27,7 +54,9 @@ export default function ListItem({ onSwipe, name }){
     };
 
     return(
-        <View style={styles.itemContainer}>
+        <Animated.View
+            style={[styles.itemContainer, animatedStyle]}
+        >
             <ScrollView {...scrollProps}>
             <View style={styles.swipeBlank}/>
                 <TouchableOpacity>
@@ -39,6 +68,6 @@ export default function ListItem({ onSwipe, name }){
                 </TouchableOpacity>
                 <View style={styles.swipeBlank}/>
             </ScrollView>
-        </View>
+        </Animated.View>
     );
 }

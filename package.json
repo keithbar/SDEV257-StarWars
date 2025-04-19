@@ -23,7 +23,6 @@
     "react-native-gesture-handler": "~2.20.2",
     "react-native-reanimated": "~3.16.1",
     "prop-types": "*",
-    "@expo/vector-icons/FontAwesome": "^14.0.2",
     "expo-font": "~13.0.4",
     "@expo/vector-icons": "^14.0.2"
   },
