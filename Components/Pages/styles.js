@@ -63,4 +63,10 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+
+  headerImage: {
+    flex: 1,
+    backgroundColor: "black",
+    width: "100%"
+  }
 });
