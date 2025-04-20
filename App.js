@@ -46,7 +46,10 @@ export default function App() {
 
       {Platform.OS === "ios" && (
         <Tab.Navigator
-          screenOptions={{ headerTintColor: "white" }}
+          screenOptions={{ 
+            headerTintColor: "white",
+            headerTitleAlign: "left"
+           }}
         >
           <Tab.Screen name="Planets" component={Planets} 
             options={getHeaderImage("Planets")} />
