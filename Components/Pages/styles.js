@@ -7,12 +7,33 @@ export default StyleSheet.create({
     paddingTop: 10,
   },
 
+  itemList: {
+    flex: 1,
+    alignSelf: "center",
+  },
+
+  itemContainer: {
+    flex: 1,
+    flexDirection: "row",
+    width: 200
+  },
+
   item: {
     margin: 5,
-    padding: 5,
-    color: "slategrey",
+    padding: 25,
+    width: 200,
     backgroundColor: "ghostwhite",
-    textAlign: "center"
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  itemText: {
+    textAlign: "center",
+    color: "slategrey"
+  },
+
+  swipeBlank: {
+    width: 200,
   },
 
   textInputContainer: {
@@ -42,4 +63,10 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+
+  headerImage: {
+    flex: 1,
+    backgroundColor: "black",
+    width: "100%"
+  }
 });
