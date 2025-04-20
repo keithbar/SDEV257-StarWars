@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextInput, Alert, View, 
     TouchableOpacity, Keyboard } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { FontAwesome } from "@expo/vector-icons";
 import styles from "./Pages/styles";
 
 export default function SearchBar(){
