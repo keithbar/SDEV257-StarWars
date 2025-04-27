@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NetInfo from "@react-native-community/netinfo";
-import { Platform, View, StatusBar, StyleSheet, Alert } from "react-native";
+import { Platform, View, StatusBar, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { registerRootComponent } from "expo";
 import Toast from "react-native-toast-message";
