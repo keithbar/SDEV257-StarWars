@@ -68,5 +68,32 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: "black",
     width: "100%"
+  },
+
+  detailsTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginVertical: 12
+  },
+
+  detailsRow: {
+    flexDirection: "row",
+    paddingVertical: 12,
+    paddingHorizontal: "5%",
+    marginHorizontal: "20%",
+    borderBottomWidth: 0.5,
+    borderColor: "#bbb"
+  },
+
+  detailsLabel: {
+    fontWeight: "bold",
+    fontSize: 16
+  },
+
+  detailsItem: {
+    fontSize: 16,
+    flex: 1,
+    flexWrap: "wrap"
   }
 });

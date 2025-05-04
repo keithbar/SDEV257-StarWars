@@ -17,7 +17,7 @@ function mapItems(items, field, listName) {
         }));
     } else{
         return items.map((item, i) => ({
-            key: i.toString(),
+            key: item["uid"],
             value: item[field]
         }));
     }
@@ -27,7 +27,9 @@ function mapItems(items, field, listName) {
 // results is a string indicating which attribute is to
 //   represent each individual item for the list
 // field is a string indicating which attribute to display
-export default function ListContainer({ listName, results, field }) {
+export default function ListContainer({ 
+    listName, results, field, searchText
+}) {
     const [data, setData] = useState([]);
     useEffect(() => {
         fetch("https://www.swapi.tech/api/" + listName)
@@ -36,8 +38,14 @@ export default function ListContainer({ listName, results, field }) {
                 setData(mapItems(data[results], field, listName));
             });
     }, []);
+
+    const dataFiltered = data.filter((item) => {
+        return item.value.toLowerCase()
+            .includes(searchText.toLowerCase());
+    });
+
     return (
-        <List data={data} />
+        <List data={dataFiltered} />
     );
 }
 
