@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { TextInput, Alert, View, 
     TouchableOpacity, Keyboard } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import styles from "./Pages/styles";
 
-export default function SearchBar(){
-    const [changedText, setChangedText] = useState("");
-    const [submittedText, setSubmittedText] = useState("");
-
+export default function SearchBar({ searchText, setSearchText }){
     function handleSubmittedText(text){
         Keyboard.dismiss();
-        setSubmittedText(text);
-        Alert.alert(
-            "You searched for " + text + ".",
-            "Search results will be implemented in a future update."
-        );
-        setChangedText("");
-        setSubmittedText("");
+        setSearchText(text);
     }
+
+    useFocusEffect(
+        useCallback(() => {
+            setSearchText("");
+        }, [])
+    );
 
     return(
         <View style={styles.textInputContainer}>
@@ -26,21 +24,18 @@ export default function SearchBar(){
                 label="Search"
                 returnKeyType="search"
                 placeholder="Search"
-                value={changedText}
-                onChangeText={(e) => {
-                    setChangedText(e);
-                }}
+                value={searchText}
+                onChangeText={setSearchText}
                 onSubmitEditing={(e) => {
                     handleSubmittedText(e.nativeEvent.text);
                 }}
                 onFocus={() => {
-                    setChangedText("");
-                    setSubmittedText("");
+                    setSearchText("");
                 }}
             />
             <TouchableOpacity 
                 style={styles.searchButton}
-                onPress={() => handleSubmittedText(changedText)}
+                onPress={() => handleSubmittedText(searchText)}
             >
                 <FontAwesome
                     name="search"

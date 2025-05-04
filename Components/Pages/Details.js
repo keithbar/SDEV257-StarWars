@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { KeyboardAvoidingView, Platform, 
     Text, View, ScrollView } from "react-native";
-import { useFocusEffect } from "@react-navigation/native"
+import { useFocusEffect } from "@react-navigation/native";
 import Animated, { useSharedValue, useAnimatedStyle, 
     withTiming, withDelay, Easing } from "react-native-reanimated";
 import styles from "./styles";
