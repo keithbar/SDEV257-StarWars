@@ -17,7 +17,7 @@ function mapItems(items, field, listName) {
         }));
     } else{
         return items.map((item, i) => ({
-            key: i.toString(),
+            key: item["uid"],
             value: item[field]
         }));
     }

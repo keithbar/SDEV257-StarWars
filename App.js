@@ -11,6 +11,7 @@ import LazyImage from "./Components/LazyImage";
 import Planets from "./Components/Pages/Planets";
 import Films from "./Components/Pages/Films";
 import Spaceships from "./Components/Pages/Spaceships";
+import Details from "./Components/Pages/Details"
 import styles from "./Components/Pages/styles";
 
 const Tab = createBottomTabNavigator();
@@ -106,6 +107,11 @@ export default function App() {
               options={getHeaderImage("Films")} />
             <Tab.Screen name="Spaceships" component={Spaceships} 
               options={getHeaderImage("Spaceships")} />
+            <Tab.Screen name="Details" component={Details}
+              options={{
+                ...getHeaderImage("Planets"),
+                tabBarItemStyle: { display: "none" }
+              }} />
           </Tab.Navigator>
         )}
 
@@ -119,6 +125,12 @@ export default function App() {
               options={getHeaderImage("Films")} />
             <Drawer.Screen name="Spaceships" component={Spaceships} 
               options={getHeaderImage("Spaceships")} />
+            <Drawer.Screen name="Details" component={Details}
+              options={{
+                ...getHeaderImage("Planets"),
+                drawerItemStyle: { display: "none" }
+              }} />
+
           </Drawer.Navigator>
         )}
       </NavigationContainer>

@@ -1,7 +1,7 @@
 import React, { useRef, useCallback } from "react";
 import { View, ScrollView, 
     Text, TouchableOpacity } from "react-native";
-import { useFocusEffect } from "@react-navigation/native"
+import { useFocusEffect } from "@react-navigation/native";
 import Animated, { useSharedValue, useAnimatedStyle, 
     withTiming, withDelay, Easing } from "react-native-reanimated";
 import styles from "../Pages/styles";
